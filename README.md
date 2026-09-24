@@ -17,11 +17,13 @@ The project started as a simple way to track Dupixent (达必妥) stock and inje
 - Calculate historical average dosing interval
 - Low-stock indicator
 - Recent history and full event history
+- One-tap `.ics` calendar reminder export for the next planned dose
+- Choose same-day or 1–3 day advance calendar reminder
 - Local-only storage using `localStorage`
 - Export/import JSON backup
 - Installable PWA manifest
 - Offline service worker
-- Responsive iPhone/Android-friendly interface
+- Mobile-first UI redesigned around the next dose, stock and quick actions
 
 ## Privacy model
 
@@ -31,7 +33,9 @@ Medication names, stock levels and dosing history are stored in the browser's lo
 
 ## Files
 
-- `index.html` — application UI and logic
+- `index.html` — application structure
+- `app.css` — mobile UI styles
+- `app.js` — application state, calculations, history and reminder export
 - `manifest.json` — PWA configuration
 - `sw.js` — offline service worker
 - `icon.svg` — application icon
@@ -41,17 +45,15 @@ Medication names, stock levels and dosing history are stored in the browser's lo
 
 ### Near term
 
-- Improve calendar/history view
+- Better iOS home-screen icon support
 - Add stock adjustment event instead of direct stock editing
 - Add medication archive rather than delete-only workflow
 - Add CSV export
-- Add calendar (`.ics`) export for next planned dose
-- Better iOS home-screen icon support
 - Add automated tests for date/stock calculations
 
 ### Later possibilities
 
-- Optional reminder notifications where supported
+- True Web Push reminders for installed Home Screen PWAs (requires a small push backend/subscription store)
 - Optional encrypted/cloud sync across devices
 - Symptoms / side-effects log
 - Appointment and prescription refill tracking
@@ -64,4 +66,4 @@ MediLog is a **personal record-keeping tool**, not a prescribing or treatment-de
 
 ## Deployment
 
-The app is static and can be deployed directly to Cloudflare Pages, GitHub Pages, Netlify or any HTTPS static host. No server or database is required for the current local-only version.
+The intended lightweight deployment is GitHub Pages from the `main` branch. The static PWA does not require a database or server for its current local-only features. True background Web Push would require a small backend service.
