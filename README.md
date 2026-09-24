@@ -1,10 +1,12 @@
-# med-tracker
+# MediLog (`med-tracker`)
 
 **MediLog** is a lightweight, mobile-first personal medication tracker built as an installable PWA.
 
-The project started as a simple way to track Dupixent (达必妥) stock and injection dates, but the data model is intentionally generic so it can later support other injections, tablets, capsules, inhalers, supplements and related health records.
+This repository is the **canonical source of truth** for the project. Development should continue here rather than in the temporary `miiioz.github.io/medilog-preview` copy.
 
-## Current MVP
+The project started as a simple way to track Dupixent (达必妥) stock and injection dates, but the data model is intentionally generic so it can also support other injections, tablets, capsules, inhalers, supplements and related health records.
+
+## Current version
 
 - Add and manage multiple medications
 - Track current stock and unit (支 / 片 / 粒 etc.)
@@ -23,7 +25,7 @@ The project started as a simple way to track Dupixent (达必妥) stock and inje
 - Export/import JSON backup
 - Installable PWA manifest
 - Offline service worker
-- Mobile-first UI redesigned around the next dose, stock and quick actions
+- Mobile-first UI centered on next dose, remaining stock and quick actions
 
 ## Privacy model
 
@@ -39,13 +41,25 @@ Medication names, stock levels and dosing history are stored in the browser's lo
 - `manifest.json` — PWA configuration
 - `sw.js` — offline service worker
 - `icon.svg` — application icon
+- `.nojekyll` — GitHub Pages static-site compatibility
 - `README.md` — project record and roadmap
+
+## Deployment
+
+Primary deployment target: **GitHub Pages from `main` / repository root**.
+
+Expected production URL after Pages is enabled:
+
+`https://miiioz.github.io/med-tracker/`
+
+The current app is fully static and does not require a database or backend. The old `medilog-preview` path is temporary and should be removed after the production Pages URL is confirmed working.
 
 ## Roadmap
 
 ### Near term
 
 - Better iOS home-screen icon support
+- Improve visual polish and interaction details
 - Add stock adjustment event instead of direct stock editing
 - Add medication archive rather than delete-only workflow
 - Add CSV export
@@ -63,7 +77,3 @@ Medication names, stock levels and dosing history are stored in the browser's lo
 ## Product principle
 
 MediLog is a **personal record-keeping tool**, not a prescribing or treatment-decision tool. It should display what the user entered and simple date/inventory calculations without recommending dose changes or changing treatment intervals.
-
-## Deployment
-
-The intended lightweight deployment is GitHub Pages from the `main` branch. The static PWA does not require a database or server for its current local-only features. True background Web Push would require a small backend service.
