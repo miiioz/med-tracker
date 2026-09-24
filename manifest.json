@@ -1,0 +1,19 @@
+{
+  "name": "MediLog - Medication Tracker",
+  "short_name": "MediLog",
+  "description": "Personal medication, stock and dosing history tracker.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f7fb",
+  "theme_color": "#f6f7fb",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
